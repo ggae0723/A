@@ -7,7 +7,7 @@ var 사진 = document.createElement('img')
    var 시간 = document.createElement('span')
    document.body.append(시간)
    시간.style.fontSize = 130
-   시간.style.marginLeft = 230
+   시간.style.marginLeft = 254
    시간.style.color = 'white'
    시간.style.fontFamily = 'Serif'
    var 년도1 = null
