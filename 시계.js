@@ -9,6 +9,7 @@
    시간.style.fontSize = 130
    시간.style.marginLeft = 260
    시간.style.color = 'white'
+시간.style.fontFamily = 'Serif'
    var 년도1 = null
    var 년도2 = null
    var 년도3 = null
