@@ -7,7 +7,7 @@
    var 시간 = document.createElement('span')
    document.body.append(시간)
    시간.style.fontSize = 130
-   시간.style.marginLeft = 230
+   시간.style.marginLeft = 245
    시간.style.color = 'white'
    시간.style.fontFamily = 'Cursive'
    var 년도1 = null
