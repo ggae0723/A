@@ -1,4 +1,4 @@
-  var 사진 = document.createElement('img')
+var 사진 = document.createElement('img')
    document.body.append(사진)
    사진.src = 'https://t1.daumcdn.net/cfile/blog/994BB93F5AD305BF02?download';
    사진.width = 1980
@@ -7,9 +7,9 @@
    var 시간 = document.createElement('span')
    document.body.append(시간)
    시간.style.fontSize = 130
-   시간.style.marginLeft = 260
+   시간.style.marginLeft = 230
    시간.style.color = 'white'
-시간.style.fontFamily = 'Serif'
+   시간.style.fontFamily = 'Serif'
    var 년도1 = null
    var 년도2 = null
    var 년도3 = null
