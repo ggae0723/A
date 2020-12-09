@@ -10,7 +10,7 @@
    시간.style.marginLeft = 55
    시간.style.color = 'white'
    시간.style.fontFamily = 'Cursive'
-   var 년도1 = null
+   var 년도1 = null 
    var 년도2 = null
    var 년도3 = null
    var 년도4 = null
@@ -40,21 +40,17 @@
    } else  if(Number(시) <= 12) {
       if (Number(시) === 12) {
        시 = '12'
-       r = 1
+       r = 0 
       }
-      if (Number(시) === 11) {
-         시 = '11'
-       r = 0
-      }
-      if (Number(시) === 10) {
-         시 = '10'
-       r = 0
-      }
+      for(var i = 0; i < 2; i++) {
+         시 = String(i + 10)
+         r = 0
+         }
  if(Number(시) < 10) {
     시 = "0" + String(시)
-    r = 0
- }
-   }
+    r = 0  
+   }  
+}
    분1 = Date()[19]
    분2 = Date()[20]
    분 = 분1 + 분2
