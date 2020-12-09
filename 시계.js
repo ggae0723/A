@@ -1,19 +1,4 @@
-var platformm = navigator.platform;
-if(platformm === 'Win32') {
-//컴터
-alert('컴터')
-}
-else if ('Android|iOS' === platformm) {
-//모바일
-alert('폰')
-}
- 
-
-
-
-
-  
-  var 사진 = document.createElement('img')
+ var 사진 = document.createElement('img')
    document.body.append(사진)
    사진.src = 'https://t1.daumcdn.net/cfile/blog/994BB93F5AD305BF02?download';
    사진.width = 1980
