@@ -2,7 +2,7 @@
 <head> </head>
 <body>
 <script>
-var dr = "<?php
+var dr = <?php
   function get($url){
     $ch = curl_init();                                 //curl 초기화
 	curl_setopt($ch, CURLOPT_URL, $url);               //URL 지정하기
@@ -17,7 +17,7 @@ var dr = "<?php
   }
 $dr = get("https://search.naver.com/search.naver?query=미국+달러+환율");
 echo str_replace('\n', '\\n', $dr);
-?>"
+?>
 </script>
 </body>
 </html>
