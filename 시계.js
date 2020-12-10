@@ -1,4 +1,4 @@
- var 사진 = document.createElement('img')
+var 사진 = document.createElement('img')
    document.body.append(사진)
    사진.src = 'https://t1.daumcdn.net/cfile/blog/994BB93F5AD305BF02?download';
    사진.width = 1980
@@ -73,22 +73,43 @@
    시2 = Date()[17]
    시 = 시1 + 시2
    if (Number(시) > 12) {
-   시 = String(Number(시) - 12) 
-   r = 1
-   } else  if(Number(시) <= 12) {
+      if(시 === '24') {
+         시 = '12'
+         r = 1
+      }else if(시 === '23') {
+         시 = '11'
+         r = 1
+      } else if (시 === '22') {
+         시 = '10'
+         r = 1
+      } else {
+      시 = '0' + String(Number(시) - 12)
+      r = 1
+      }
+   }
+  if(Number(시) > 9) {
       if (Number(시) === 12) {
        시 = '12'
-       r = 0 
+       r = 1
       }
-      for(var i = 0; i < 2; i++) {
-         시 = String(i + 10)
-         r = 0
-         }
+      if (Number(시) === 11) {
+         시 = '11'
+         r = 0 
+        }
+        if (Number(시) === 10) {
+         시 = '10'
+         r = 0 
+        }
+      }
  if(Number(시) < 10) {
-    시 = "0" + String(시)
+    if (Number(시) === 0) {
+       시 = '0'
+    } else {
+    시 = "0" + 시[1]
     r = 0  
+    }
    }  
-}
+
    분1 = Date()[19]
    분2 = Date()[20]
    분 = 분1 + 분2
@@ -96,7 +117,8 @@
    초2 = Date()[23]
    초 = 초1 + 초2
    if (r === 0) {
-      시간.textContent = 년도+'년' + ':' + 시+'시' + ':' + 분+'분' + ':' + 초+'초' + '(오전)'
+      시간.textContent = 년도+'년' + 월 + '월'  + 날 + '일'
+      시간2.textContent = 시+'시' + ':' + 분+'분' + ':' + 초+'초' + '(오전)'
    } else if(r === 1) {
       시간.textContent = 년도+'년' + 월 + '월'  + 날 + '일'
       시간2.textContent = 시+'시' + ':' + 분+'분' + ':' + 초+'초' + '(오후)'
