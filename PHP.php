@@ -2,7 +2,7 @@
 <head> </head>
 <body>
 <script>
-var dr = <?php
+<?php
   function get($url){
     $ch = curl_init();                                 //curl 초기화
 	curl_setopt($ch, CURLOPT_URL, $url);               //URL 지정하기
