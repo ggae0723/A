@@ -1,4 +1,4 @@
-var 사진 = document.createElement('img')
+ var 사진 = document.createElement('img')
    document.body.append(사진)
    사진.src = 'https://t1.daumcdn.net/cfile/blog/994BB93F5AD305BF02?download';
    사진.width = 1980
@@ -86,7 +86,7 @@ var 사진 = document.createElement('img')
       시 = '0' + String(Number(시) - 12)
       r = 1
       }
-   }
+   } else {
   if(Number(시) > 9) {
       if (Number(시) === 12) {
        시 = '12'
@@ -101,15 +101,13 @@ var 사진 = document.createElement('img')
          r = 0 
         }
       }
- if(Number(시) < 10) {
     if (Number(시) === 0) {
        시 = '0'
     } else {
     시 = "0" + 시[1]
     r = 0  
-    }
    }  
-
+}
    분1 = Date()[19]
    분2 = Date()[20]
    분 = 분1 + 분2
