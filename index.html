@@ -1,11 +1,50 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시계</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://simage.mujikorea.net/goods/31/05/12/88/4547315915224_N_N_400.jpg" />
+    <title>getCurrentPosition()으로 현재 위치 파악</title>
+    <style>
+
+    </style>
 </head>
 <body>
-    <script src="./시계.js"></script>
+    <a href="" id="0">
+        <button>구글바로가기</button>
+    </a>
+<h3>getCurrentPosition()으로 현재 위치 파악</h3>
+<hr>
+<div id="msg">이곳에 위치정보 출력</div>
+<div id="map"></div>
+<script>
+    
+    if(!navigator.geolocation)
+    alert('지원안함')
+    else
+   var d =  document.getElementById('0')
+    navigator.geolocation.getCurrentPosition(found);
+
+    function found(position) {
+        var now = new Date(position.timestamp);
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude
+        var acc = position.coords.accuracy
+
+        lat = lat.toPrecision(8)
+        lon = lon.toPrecision(8)
+
+        var text = '현재시간' + now.toUTCString() + '<br>'
+        text += '현재위치 (위도 ' + lat + '° , 경도 ' + lon + '°)<br>'
+        text += '정확도 ' + acc + 'm<br>';
+
+        document.getElementById('msg').innerHTML = text
+        var img = new Image()
+img.src = "https://www.google.co.kr/maps/place/37%C2%B011'30.4%22N+128%C2%B028'28.1%22E/@"
+ + lat + ',' + lon
+ + ',230m/data=!3m2!1e3!4b1!4m5!3m4!1s0x0:0x0!8m2!3d37.191783!4d128.47447'
+ d.href = img.src
+ document.getElementById('map').appendChild(img)
+    }
+</script>
 </body>
 </html>
